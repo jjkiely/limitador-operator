@@ -81,7 +81,7 @@ jobs:
           echo "IMG_TAGS=${{ github.sha }} ${{ env.IMG_TAGS }}" >> $GITHUB_ENV
       - name: Build Image
         id: build-image
-        uses: redhat-actions/buildah-build@v2
+        uses: redhat-actions/buildah-build@v3
         with:
           image: ${{ env.OPERATOR_NAME }}
           tags: ${{ env.IMG_TAGS }}
@@ -140,7 +140,7 @@ jobs:
           echo "IMG_TAGS=${{ github.sha }} ${{ env.IMG_TAGS }}" >> $GITHUB_ENV
       - name: Build Image
         id: build-image
-        uses: redhat-actions/buildah-build@v2
+        uses: redhat-actions/buildah-build@v3
         with:
           image: ${{ env.OPERATOR_NAME }}-bundle
           tags: ${{ env.IMG_TAGS }}
@@ -192,7 +192,7 @@ jobs:
           echo "IMG_TAGS=${{ github.sha }} ${{ env.IMG_TAGS }}" >> $GITHUB_ENV
       - name: Build Image
         id: build-image
-        uses: redhat-actions/buildah-build@v2
+        uses: redhat-actions/buildah-build@v3
         with:
           image: ${{ env.OPERATOR_NAME }}-catalog
           tags: ${{ env.IMG_TAGS }}
